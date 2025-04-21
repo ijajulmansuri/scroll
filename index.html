@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stacked Scroll Cards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scroll-space {
+      padding-bottom: 200vh; /* enough space for last card */
+    }
+
+    .sticky-card {
+      position: sticky;
+      top: 120px;
+      margin-bottom: 60px;
+      transition: all 0.5s ease-in-out;
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem; /* rounded corners */
+    }
+
+    .sticky-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(128, 90, 213, 0.2); /* subtle shadow on hover */
+      z-index: 999; /* Make the card pop when hovered */
+    }
+
+    .sticky-card .step-label {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #6b46c1; /* Purple color */
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+    }
+
+    .sticky-card .card-title {
+      color: #4a2c8f;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .sticky-card .card-content {
+      color: #4a4a4a;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Styling for the background color of each card */
+    .sticky-card:nth-child(1) {
+      background: linear-gradient(145deg, #f7a8b8, #f1d3e2);
+    }
+    
+    .sticky-card:nth-child(2) {
+      background: linear-gradient(145deg, #f7f0b6, #f3d08d);
+    }
+
+    .sticky-card:nth-child(3) {
+      background: linear-gradient(145deg, #a0c4ff, #87b0ff);
+    }
+
+    .sticky-card:nth-child(4) {
+      background: linear-gradient(145deg, #92d8b1, #7eb89f);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-purple-50 text-gray-900">
+
+  <section class="px-6 md:px-16 py-20 scroll-space relative">
+    <div class="max-w-2xl mx-auto text-center mb-20">
+      <h2 class="text-4xl font-bold text-blue-900">Our Product Process</h2>
+      <p class="text-gray-600 mt-4">Scroll down to reveal each step with full content visibility and engaging design.</p>
+    </div>
+
+    <div class="relative">
+      <!-- Card 1 -->
+      <div class="sticky-card z-40 bg-purple-100/90 p-8 md:p-12 rounded-3xl shadow-2xl w-full md:w-3/4 mx-auto border border-purple-300">
+        <div class="flex justify-between items-center mb-3">
+          <span class="step-label">Step 01</span>
+          <h3 class="card-title">Initial Consultation</h3>
+        </div>
+        <p class="card-content">
+          We’ll talk through your business, vision, and digital needs to find the perfect approach.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="sticky-card z-30 bg-purple-200/90 p-8 md:p-12 rounded-3xl shadow-2xl w-full md:w-3/4 mx-auto border border-purple-400">
+        <div class="flex justify-between items-center mb-3">
+          <span class="step-label">Step 02</span>
+          <h3 class="card-title">Design Phase</h3>
+        </div>
+        <p class="card-content">
+          We begin designing layouts and wireframes with your audience and goals in mind.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="sticky-card z-20 bg-purple-300/90 p-8 md:p-12 rounded-3xl shadow-2xl w-full md:w-3/4 mx-auto border border-purple-500">
+        <div class="flex justify-between items-center mb-3">
+          <span class="step-label">Step 03</span>
+          <h3 class="card-title">Development</h3>
+        </div>
+        <p class="card-content">
+          With clean code and best practices, we bring your design to life across all devices.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="sticky-card z-10 bg-purple-400/90 p-8 md:p-12 rounded-3xl shadow-2xl w-full md:w-3/4 mx-auto border border-purple-600">
+        <div class="flex justify-between items-center mb-3">
+          <span class="step-label">Step 04</span>
+          <h3 class="card-title">Launch & Support</h3>
+        </div>
+        <p class="card-content">
+          After launch, we monitor, maintain, and support your growth journey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
